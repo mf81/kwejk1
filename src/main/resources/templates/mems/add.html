@@ -13,6 +13,11 @@
     <br/>
     <label for="url">Podaj adres url mema</label>
     <input th:field="*{url}" id="url" name="url" minlength="6" type="url" required>
+
+    <select name="memsCategory" id="memsCategory">
+        <option th:each="cat:${memsCategory}" th:value="${cat.id}" th:text="${cat.category}"></option>
+    </select>
+
     <input type="submit" value="Dodaj"/>
 </form>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

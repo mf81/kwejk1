@@ -1,9 +1,6 @@
 package eu.maciejfijalkowski.kwejk2.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Mem {
@@ -12,6 +9,9 @@ public class Mem {
     private Long Id;
     private String title;
     private String url;
+
+    @OneToOne
+    private MemsCategory memsCategory;
 
     public Long getId() {
         return Id;
@@ -35,5 +35,13 @@ public class Mem {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public MemsCategory getMemsCategory() {
+        return memsCategory;
+    }
+
+    public void setMemsCategory(MemsCategory memsCategory) {
+        this.memsCategory = memsCategory;
     }
 }

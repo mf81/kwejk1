@@ -16,7 +16,7 @@
         <td th:text="${mem.id}"></td>
         <td><img th:src="${mem.url}" height="100px"/></td>
         <td th:text="${mem.title}"></td>
-        <td></td>
+        <td th:text="${mem.memsCategory.getCategory()}"></td>
     </tr>
 </table>
 

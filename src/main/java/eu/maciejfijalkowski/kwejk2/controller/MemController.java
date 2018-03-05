@@ -26,6 +26,7 @@ public class MemController {
     @GetMapping("/mems/add")
     public String add(ModelMap modelMap){
         modelMap.addAttribute("mem", new Mem());
+        modelMap.addAttribute("memsCategory",memsCategoryRepository.findAll());
         return "mems/add";
     }
 
