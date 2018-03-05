@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Wszystkie memy</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>MEM</th>
+        <th>OPIS</th>
+        <th>KATEGORIA</th>
+    </tr>
+    <tr th:each="mem : ${mems}">
+        <td th:text="${mem.id}"></td>
+        <td><img th:src="${mem.url}" height="100px"/></td>
+        <td th:text="${mem.title}"></td>
+        <td></td>
+    </tr>
+</table>
+
+</body>
+</html>

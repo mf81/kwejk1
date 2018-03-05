@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Adds category</title>
+</head>
+<body>
+
+
+<form action="/savecategory" method="post" th:object="${memsCategory}" id="myform">
+    <label for="field">Podaj kategorie</label>
+    <input th:field="*{category}" id="field" name="field" minlength="2" type="text" required>
+
+    <input type="submit" value="Dodaj kategorie"/>
+</form>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+<script>
+
+$.validate({
+        modules: 'html5, logic, security',
+        validateOnEvent: true,
+        reCaptchaSitekey: '...',
+        reCaptchaSize: 'normal',
+        reCaptchaTheme: 'light',
+    });
+$("#myform").validate();
+</script>
+
+</body>
+</html>
