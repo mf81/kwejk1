@@ -3,36 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Adds mems</title>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/theme-default.min.css" rel="stylesheet" type="text/css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
 </head>
 <body>
 
 
 <form action="/mems" method="post" th:object="${mem}" id="myform">
     <label for="field">Podaj tytuł mema</label>
-    <input th:field="*{title}" id="field" name="field" minlength="2" type="text" required>
+    <input th:field="*{title}" id="field" name="field" minlength="2" type="text" title="Opis jest wymagany" required>
     <br/>
     <label for="url">Podaj adres url mema</label>
-    <input th:field="*{url}" id="url" name="url" minlength="6" type="url" required>
+    <input th:field="*{url}" id="url" name="url" data-validation="custom" data-validation-regexp="^(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)$">
 
-    <select name="memsCategory" id="memsCategory">
+    <select name="memsCategory" id="memsCategory" title="Wybierz kategorie" required>
         <option th:each="cat:${memsCategory}" th:value="${cat.id}" th:text="${cat.category}"></option>
     </select>
 
     <input type="submit" value="Dodaj"/>
 </form>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
 <script>
-
-$.validate({
-        modules: 'html5, logic, security',
-        validateOnEvent: true,
-        reCaptchaSitekey: '...',
-        reCaptchaSize: 'normal',
-        reCaptchaTheme: 'light',
-    });
-$("#myform").validate();
+  $.validate();
 </script>
-
 </body>
 </html>
