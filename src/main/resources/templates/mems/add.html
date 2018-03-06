@@ -24,7 +24,51 @@
     <input type="submit" value="Dodaj"/>
 </form>
 <script>
-  $.validate();
+var pl_PL = {
+        errorTitle: 'Przesyłanie formularza nie powiodło się!',
+        requiredFields: 'Nie odpowiedziałeś na wszystkie wymagane pola',
+        badTime: 'Nie podałeś prawidłowego czasu',
+        badEmail: 'Nie podałeś poprawnego adresu e-mail',
+        badTelephone: 'Nie podałeś poprawnego numeru telefonu',
+        badSecurityAnswer: 'Nie podałeś poprawnej odpowiedzi na pytanie dotyczące bezpieczeństwa',
+        badDate: 'Nie podałeś poprawnej daty',
+        lengthBadStart: 'Wartość wejściowa musi wynosić od ',
+        lengthBadEnd: ' znaków',
+        lengthTooLongStart: 'Wartość wejściowa jest dłuższa niż ',
+        lengthTooShortStart: 'Wartość wejściowa jest krótsza niż ',
+        notConfirmed: 'Wartości wejściowe nie mogły zostać potwierdzone',
+        badDomain: 'Nieprawidłowa nazwa domeny',
+        badUrl: 'Niepoprawny adres URL',
+        badCustomVal: 'Niepoprawna wartość',
+        andSpaces: ' i spacje ',
+        badInt: 'Niepoprawny numer',
+        badSecurityNumber: 'Twój numer ubezpieczenia społecznego był nieprawidłowy',
+        badUKVatAnswer: 'Niepoprawny VAT numer',
+        badStrength: 'Hasło jest za słabe',
+        badNumberOfSelectedOptionsStart: 'Musisz wybrać przynajmniej ',
+        badNumberOfSelectedOptionsEnd: ' odpowiedź',
+        badAlphaNumeric: 'Wartość wejściowa może zawierać tylko znaki alfanumeryczne ',
+        badAlphaNumericExtra: ' i ',
+        wrongFileSize: 'Plik który chcesz przesłać jest za duży (max %s)',
+        wrongFileType: 'Tylko plik typu %s jest dozwolony',
+        groupCheckedRangeStart: 'Wybierz pomiędzy ',
+        groupCheckedTooFewStart: 'Wybierz przynajmniej ',
+        groupCheckedTooManyStart: 'Wybierz maksimum z ',
+        groupCheckedEnd: ' przedmiot(ów)',
+        badCreditCard: 'Numer karty kredytowej jest niepoprawny',
+        badCVV: 'Numer CVV jest niepoprawny',
+        wrongFileDim : 'Niepoprawny rozmiar pliku graficznego,',
+        imageTooTall : 'plik graficzny nie może być wyższy niż',
+        imageTooWide : 'plik graficzny nie może być szerszy niż',
+        imageTooSmall : 'plik jest za mały',
+        min : 'min',
+        max : 'maks',
+        imageRatioNotAccepted : 'Współczynnik proporcji obrazu nie jest akceptowany'
+    };
+
+  $.validate({
+    language : pl_PL
+  });
 </script>
 </body>
 </html>
