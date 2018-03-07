@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>ADD COMMANTS</title>
+</head>
+<body>
+<form action="/addcommantsave" method="post" th:object="${mem}" id="myform">
+    <label for="field">Wpisz komentarz</label>
+    <input type="hidden" name="id" th:value="${memdb.Id}"/>
+    <input th:field="*{mem.memComments.comments}" id="field" name="field" minlength="2" type="text" required>
+
+    <input type="submit" value="Dodaj komentarz"/>
+</form>
+
+</body>
+</html>

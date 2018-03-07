@@ -14,7 +14,7 @@
     </tr>
     <tr th:each="mem : ${mems}">
         <td th:text="${mem.id}"></td>
-        <td><img th:src="${mem.url}" height="100px"/></td>
+        <td><a th:href="@{'/addcomment/' + ${mem.id}}"><img th:src="${mem.url}" height="100px"/></a></td>
         <td th:text="${mem.title}"></td>
         <td th:text="${mem.memsCategory.getCategory()}"></td>
     </tr>

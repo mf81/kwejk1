@@ -1,6 +1,8 @@
 package eu.maciejfijalkowski.kwejk2.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Mem {
@@ -10,8 +12,20 @@ public class Mem {
     private String title;
     private String url;
 
-    @OneToOne
+    @OneToMany(mappedBy = "mem")
+    private List<MemComments> comments = new ArrayList();
+
+     @OneToOne
     private MemsCategory memsCategory;
+
+    public List<MemComments> getComments() {
+        return comments;
+    }
+    
+
+    public void setComments(List<MemComments> comments) {
+        this.comments = comments;
+    }
 
     public Long getId() {
         return Id;
